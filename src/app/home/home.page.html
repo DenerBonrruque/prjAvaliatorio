@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <h1>Vai dar namoro<img src="../../assets/icon/coracao.png" width="45" height="45"></h1> 
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <h3>Será que ele(a) é sua alma gemêa?</h3>
+  <ion-item class="ion-no-padding">
+    <ion-label position="floating">Nome da 1ª pessoa</ion-label>
+    <ion-input type="text" [(ngModel)]="nome1"></ion-input>
+  </ion-item>
+  <div class="icone">
+    <img src="../../assets/icon/casal.png">
+    <ion-icon name="add"></ion-icon>
+  </div>
+  <ion-item class="ion-no-padding">
+    <ion-label position="floating">Nome da 2ª pessoa</ion-label>
+    <ion-input type="text" [(ngModel)]="nome2"></ion-input>
+
+  </ion-item>
+
+
+  <div class="icone">
+    <img src="../../assets/icon/heart.gif" alt="coração">
+  </div>
+
+  <ion-button (click)="calcular()" expand="full" color="danger" id="abrir-resposta">Calcular</ion-button>
+
+  <ion-modal id="resposta" #modal trigger="abrir-resposta">
+    <ng-template>
+      <div class="wrapper">
+        <h1>{{porcentagem}}%</h1>
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>
